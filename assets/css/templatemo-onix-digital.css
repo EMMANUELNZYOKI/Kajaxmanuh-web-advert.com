@@ -1753,7 +1753,7 @@ form#contact input {
 }
 
 form#contact input::placeholder {
-  color: #afafaf;
+  color: #0a0000;
 }
 
 form#contact button {
