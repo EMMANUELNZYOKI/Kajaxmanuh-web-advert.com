@@ -679,11 +679,16 @@ TemplateMo 565 kajax Digital
         </div>
         <div class="col-lg-12">
           <div class="copyright">
-            <p>Copyright © 2025 KajaxManuh Digital Co., Ltd. All Rights Reserved. 
+          <p>
+            Copyright © <span id="year"></span> KajaxCodelab Co., Ltd. All Rights Reserved.
             <br>
             Designed by <a rel="nofollow" href="#" title="#">Kajaxmanuh</a>
           </p>
-          </div>
+        </div>
+
+        <script>
+          document.getElementById("year").textContent = new Date().getFullYear();
+        </script>
         </div>
 
       </div>
