@@ -573,44 +573,57 @@ TemplateMo 565 kajax Digital
             </div>
 
             <div class="info">
-            <span><i class="fa fa-phone"></i> <a href="tel:+254719479011">+254719479011<br>+254738796201</a></span>
+            <span><i class="fa fa-phone"></i> <a href="tel:+254719479011">+254719479011</a></span>
 
             <span>
-             <span><i class="fa fa-envelope"></i> <a href="mailto:manuhdewebdev@gmail.com">manuhdewebdev@gmail.com<br>kajaxmanu@gmail.com</a></span>
+             <span><i class="fa fa-envelope"></i> <a href="mailto:kajaxcodelab@gmail.com">kajaxcodelab@gmail.com</a></span>
             </span>
           </div>
           </div>
         </div>
         <div class="col-lg-5 align-self-center">
-          <form id="contact" action="" method="get">
-            <div class="row">
-              <div class="col-lg-12">
-                <fieldset>
-                  <input type="name" name="name" id="name" placeholder="Name" autocomplete="on" required>
-                </fieldset>
-              </div>
-              <div class="col-lg-12">
-                <fieldset>
-                  <input type="surname" name="surname" id="surname" placeholder="Surname" autocomplete="on" required>
-                </fieldset>
-              </div>
-              <div class="col-lg-12">
-                <fieldset>
-                  <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email" required="">
-                </fieldset>
-              </div>
-              <div class="col-lg-12">
-                <fieldset>
-                  <input type="text" name="website" id="website" placeholder="Your Website URL" required="">
-                </fieldset>
-              </div>
-              <div class="col-lg-12">
-                <fieldset>
-                  <button type="submit" id="form-submit" class="main-button">Submit Request</button>
-                </fieldset>
-              </div>
-            </div>
-          </form>
+          <form id="contact" action="https://formsubmit.co/kajaxcodelab@gmail.com" method="POST">
+  <div class="row">
+
+    <div class="col-lg-12">
+      <fieldset>
+        <input type="text" name="name" id="name" placeholder="Name" autocomplete="on" required>
+      </fieldset>
+    </div>
+
+    <div class="col-lg-12">
+      <fieldset>
+        <input type="text" name="surname" id="surname" placeholder="Surname" autocomplete="on" required>
+      </fieldset>
+    </div>
+
+    <div class="col-lg-12">
+      <fieldset>
+        <input type="email" name="email" id="email" placeholder="Your Email" required>
+      </fieldset>
+    </div>
+
+    <div class="col-lg-12">
+      <fieldset>
+        <input type="url" name="website" id="website" placeholder="Your Website URL" required>
+      </fieldset>
+    </div>
+
+    <div class="col-lg-12">
+      <fieldset>
+        <button type="submit" id="form-submit" class="main-button">Submit Request</button>
+      </fieldset>
+    </div>
+
+  </div>
+
+  <!-- Required for FormSubmit -->
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_next" value="https://kajaxcodelab.netlify.app/success.html">
+
+</form>
+
         </div>
       </div>
     </div>
@@ -634,8 +647,8 @@ TemplateMo 565 kajax Digital
             <div class="logo">
               <a href="index.html" class="logo" style="font-size: 24px; font-weight: bold; color: #0d0202; text-decoration: none;">KAJAXMANUH</a>
             </div>
-            <a href="mailto:manuhdewebdev@gmail.com?subject=Inquiry&body=Hello, I would like to...">
-                 manuhdewebdev@gmail.com
+            <a href="mailto:kajaxcodelab@gmail.com?subject=Inquiry&body=Hello, I would like to...">
+                 kajaxcodelab@gmail.com
                   </a>
 
             <ul>
@@ -669,15 +682,49 @@ TemplateMo 565 kajax Digital
           </div>
         </div>
         <div class="col-lg-3">
-          <div class="subscribe-newsletters footer-item">
-            <h4>Subscribe Newsletters</h4>
-            <p>Get our latest news and ideas to your inbox</p>
-            <form action="#" method="get">
-              <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email" required="">
-              <button type="submit" id="form-submit" class="main-button "><i class="fa fa-paper-plane-o"></i></button>
-            </form>
-          </div>
-        </div>
+  <div class="subscribe-newsletters footer-item">
+  <h4>Subscribe Newsletters</h4>
+  <p>Get to know about us</p>
+
+  <form id="newsletter-form">
+    <input type="email" name="email" id="email" placeholder="Your Email" required>
+    <button type="submit" class="main-button">
+      <i class="fa fa-paper-plane-o"></i>
+    </button>
+  </form>
+
+  <!-- Success message -->
+  <p id="success-msg" style="display:none; color:green; margin-top:10px;">
+    Thank you for subscribing!
+  </p>
+
+  <!-- PDF Modal -->
+  <div id="pdf-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
+    <div style="position:relative; width:80%; height:80%; background:#fff; border-radius:5px; overflow:hidden;">
+      <button id="close-modal" style="position:absolute; top:10px; right:10px; z-index:10;">Close</button>
+      <iframe src="assets/images/KajaxCodeLab_Company_Profile.pdf" width="100%" height="100%"></iframe>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById("newsletter-form");
+    const successMsg = document.getElementById("success-msg");
+    const pdfModal = document.getElementById("pdf-modal");
+    const closeModal = document.getElementById("close-modal");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault(); // prevent default submission
+      successMsg.style.display = "block"; // show success message
+      pdfModal.style.display = "flex"; // show PDF modal
+    });
+
+    closeModal.addEventListener("click", function() {
+      pdfModal.style.display = "none"; // close modal
+    });
+  </script>
+</div>
+</div>
+
         <div class="col-lg-12">
           <div class="copyright">
           <p>
