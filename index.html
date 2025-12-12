@@ -582,49 +582,52 @@ TemplateMo 565 kajax Digital
           </div>
         </div>
         <div class="col-lg-5 align-self-center">
-          <form id="contact" action="https://formsubmit.co/kajaxcodelab@gmail.com" method="POST">
-  <div class="row">
+  <form id="contact" action="https://formsubmit.co/kajaxcodelab@gmail.com" method="POST" class="contact-form">
 
-    <div class="col-lg-12">
-      <fieldset>
-        <input type="text" name="name" id="name" placeholder="Name" autocomplete="on" required>
-      </fieldset>
+    <!-- Name -->
+    <div class="form-group mb-3">
+      <input type="text" name="name" id="name" class="form-control" placeholder="First Name" autocomplete="given-name" required>
     </div>
 
-    <div class="col-lg-12">
-      <fieldset>
-        <input type="text" name="surname" id="surname" placeholder="Surname" autocomplete="on" required>
-      </fieldset>
+    <!-- Surname -->
+    <div class="form-group mb-3">
+      <input type="text" name="surname" id="surname" class="form-control" placeholder="Surname" autocomplete="family-name" required>
     </div>
 
-    <div class="col-lg-12">
-      <fieldset>
-        <input type="email" name="email" id="email" placeholder="Your Email" required>
-      </fieldset>
+    <!-- Email -->
+    <div class="form-group mb-3">
+      <input type="email" name="email" id="email" class="form-control" placeholder="Your Email" required>
+    </div>
+    <!-- Type of Inquiry -->
+    <div class="form-group mb-3">
+      <select name="inquiry" class="form-control" required>
+        <option value="" disabled selected>Select Type of Inquiry</option>
+        <option value="E-Commerce Website">E-Commerce Website </option>
+        <option value="BLOG & PORTFOLIO Website">BLOG & PORTFOLIO Website</option>
+        <option value="Business Web Application">Business Web Application</option>
+        <option value="General Question">General question</option>
+        <option value="Other">Other</option>
+      </select>
     </div>
 
-    <div class="col-lg-12">
-      <fieldset>
-        <input type="url" name="website" id="website" placeholder="Your Website URL" required>
-      </fieldset>
+    <!-- Message -->
+    <div class="form-group mb-3">
+      <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
     </div>
 
-    <div class="col-lg-12">
-      <fieldset>
-        <button type="submit" id="form-submit" class="main-button">Submit Request</button>
-      </fieldset>
+    <!-- Submit Button -->
+    <div class="text-center">
+      <button type="submit" id="form-submit" class="btn btn-primary">Submit Request</button>
     </div>
 
-  </div>
+    <!-- FormSubmit Required Hidden Fields -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="success.html">
 
-  <!-- Required for FormSubmit -->
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_template" value="table">
-  <input type="hidden" name="_next" value="https://kajaxcodelab.netlify.app/success.html">
+  </form>
+</div>
 
-</form>
-
-        </div>
       </div>
     </div>
     <div class="contact-dec">
