@@ -1,0 +1,13 @@
+{
+  "routes": [
+    {
+      "path": "/",
+      "title": "KajaxCodeLab | Web Development & Digital Solutions in Kenya"
+    },
+    { "path": "/success.html", "title": "Enquiry next steps | KajaxCodeLab" },
+    {
+      "path": "/newsletter-viewer.html",
+      "title": "Company profile | KajaxCodeLab"
+    }
+  ]
+}

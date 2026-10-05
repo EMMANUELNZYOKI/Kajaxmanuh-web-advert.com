@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kajaxcodelab.netlify.app/sitemap.xml
