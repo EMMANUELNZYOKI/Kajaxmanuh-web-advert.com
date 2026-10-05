@@ -1,33 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Newsletter</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background: #f4f4f4;
-      height: 100vh;
-    }
-    h1 {
-      margin: 20px 0;
-    }
-    iframe {
-      width: 90%;
-      height: 80vh;
-      border: 2px solid #333;
-      border-radius: 5px;
-    }
-  </style>
-</head>
-<body>
-  <h1>Our Newsletter</h1>
-  <iframe src="/assets/images/KajaxCodeLab_Company_Profile.pdf" type="application/pdf"></iframe>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,follow" />
+    <meta name="theme-color" content="#f7f8fa" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="assets/css/kajax-redesign.css" />
+    <title>Company profile | KajaxCodeLab</title>
+  </head>
+  <body>
+    <main class="utility-page utility-document-page">
+      <article
+        class="utility-card utility-document-card"
+        aria-labelledby="profile-title"
+      >
+        <a
+          class="brand utility-brand"
+          href="index.html"
+          aria-label="KajaxCodeLab home"
+          ><span class="brand-mark" aria-hidden="true"
+            ><svg viewBox="0 0 32 32">
+              <path
+                d="M7 7v18M8 16 23 7M8 16l15 9M19 7h6v6M19 25h6v-6"
+              /></svg></span
+          ><span class="brand-name">Kajax<span>CodeLab</span></span></a
+        >
+        <div class="utility-document-heading">
+          <div>
+            <p class="eyebrow">Company profile</p>
+            <h1 id="profile-title">Get to know KajaxCodeLab.</h1>
+          </div>
+          <a
+            class="button button-primary"
+            href="assets/images/KajaxCodeLab_Company_Profile.pdf"
+            download
+            >Download profile</a
+          >
+        </div>
+        <iframe
+          class="utility-document-frame"
+          src="assets/images/KajaxCodeLab_Company_Profile.pdf"
+          title="KajaxCodeLab company profile PDF"
+          loading="lazy"
+        ></iframe>
+        <a class="text-link utility-home" href="index.html"
+          >Return to the website
+          <svg class="icon"><use href="#icon-arrow" /></svg
+        ></a>
+      </article>
+    </main>
+  </body>
 </html>
