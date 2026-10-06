@@ -4,6 +4,11 @@
       "path": "/",
       "title": "KajaxCodeLab | Web Development & Digital Solutions in Kenya"
     },
+    { "path": "/about/", "title": "About | KajaxCodeLab" },
+    { "path": "/products/", "title": "Products & Services | KajaxCodeLab" },
+    { "path": "/portfolio/", "title": "Portfolio | KajaxCodeLab" },
+    { "path": "/blog/", "title": "Insights & Blog | KajaxCodeLab" },
+    { "path": "/contact/", "title": "Contact | KajaxCodeLab" },
     { "path": "/success.html", "title": "Enquiry next steps | KajaxCodeLab" },
     {
       "path": "/newsletter-viewer.html",
