@@ -1,21 +1,38 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex,follow" />
     <meta name="theme-color" content="#f7f8fa" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="stylesheet" href="assets/css/kajax-redesign.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      document.documentElement.classList.add("js");
+      try {
+        const saved = localStorage.getItem("kajax-theme");
+        document.documentElement.dataset.theme =
+          saved ||
+          (window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light");
+      } catch {
+        document.documentElement.dataset.theme = "light";
+      }
+    </script>
+    <link rel="stylesheet" href="/assets/css/kajax-redesign.css" />
     <title>Enquiry next steps | KajaxCodeLab</title>
   </head>
   <body>
-    <main class="utility-page">
-      <article class="utility-card" aria-labelledby="next-step-title">
-        <a
-          class="brand utility-brand"
-          href="index.html"
-          aria-label="KajaxCodeLab home"
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label="KajaxCodeLab home"
           ><span class="brand-mark" aria-hidden="true"
             ><svg viewBox="0 0 32 32">
               <path
@@ -23,18 +40,57 @@
               /></svg></span
           ><span class="brand-name">Kajax<span>CodeLab</span></span></a
         >
+        <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+          <a href="/">Home</a><a href="/about/">About</a
+          ><a href="/products/">Products</a><a href="/portfolio/">Portfolio</a
+          ><a href="/blog/">Blog</a><a href="/contact/">Contact</a
+          ><a
+            class="button button-small button-primary nav-cta"
+            href="/contact/"
+            >Let’s talk <span aria-hidden="true">→</span></a
+          >
+        </nav>
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          type="button"
+          aria-label="Switch to dark mode"
+          aria-pressed="false"
+        >
+          <svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M20.2 15.1A8.5 8.5 0 0 1 8.9 3.8 8.6 8.6 0 1 0 20.2 15.1Z"
+            /></svg
+          ><svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"
+            /></svg
+          ><span class="theme-toggle-label">Dark mode</span></button
+        ><button
+          class="menu-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+    <main id="main" class="utility-page">
+      <article class="utility-card" aria-labelledby="next-step-title">
         <p class="eyebrow">One last step</p>
         <h1 id="next-step-title">Your enquiry isn’t sent yet.</h1>
         <p>
-          This site doesn’t send form submissions to a server. If you started an
-          enquiry, check your email app for a prepared message and send it when
-          you’re ready.
+          This website prepares an email draft; it does not send form
+          submissions to a server. If you started an enquiry, check your email
+          app and send the message when you’re ready.
         </p>
         <div class="utility-actions">
           <a class="button button-primary" href="mailto:kajaxcodelab@gmail.com"
             >Email KajaxCodeLab</a
-          >
-          <a
+          ><a
             class="button button-quiet"
             href="https://wa.me/254719479011"
             target="_blank"
@@ -42,11 +98,11 @@
             >Continue on WhatsApp</a
           >
         </div>
-        <a class="text-link utility-home" href="index.html"
-          >Return to the website
-          <svg class="icon"><use href="#icon-arrow" /></svg
-        ></a>
+        <a class="text-link utility-home" href="/"
+          >Return to the home page <span aria-hidden="true">→</span></a
+        >
       </article>
     </main>
+    <script src="/assets/js/kajax-redesign.js" defer></script>
   </body>
 </html>
