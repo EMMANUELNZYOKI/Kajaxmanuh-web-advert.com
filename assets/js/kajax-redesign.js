@@ -128,4 +128,77 @@
       window.location.href = mailto;
     });
   }
+
+  const setupCardFilter = ({
+    searchSelector,
+    itemSelector,
+    buttonSelector,
+    filterAttribute,
+    statusSelector,
+    emptySelector,
+    itemName,
+  }) => {
+    const search = document.querySelector(searchSelector);
+    const items = [...document.querySelectorAll(itemSelector)];
+    const buttons = [...document.querySelectorAll(buttonSelector)];
+    const statusMessage = statusSelector
+      ? document.querySelector(statusSelector)
+      : null;
+    const emptyMessage = emptySelector
+      ? document.querySelector(emptySelector)
+      : null;
+    if (!items.length) return;
+
+    let activeFilter = "all";
+    const update = () => {
+      const query = (search?.value || "").trim().toLocaleLowerCase();
+      let shown = 0;
+      items.forEach((item) => {
+        const categories = (item.dataset.category || "")
+          .toLocaleLowerCase()
+          .split(/\s+/);
+        const matchesFilter =
+          activeFilter === "all" || categories.includes(activeFilter);
+        const matchesSearch =
+          !query || item.textContent.toLocaleLowerCase().includes(query);
+        const isVisible = matchesFilter && matchesSearch;
+        item.hidden = !isVisible;
+        item.classList.toggle("is-filtered-out", !isVisible);
+        if (isVisible) shown += 1;
+      });
+      if (statusMessage) {
+        statusMessage.textContent = `Showing ${shown} ${shown === 1 ? itemName : `${itemName}s`}.`;
+      }
+      emptyMessage?.classList.toggle("is-visible", shown === 0);
+    };
+
+    search?.addEventListener("input", update);
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        activeFilter = button.getAttribute(filterAttribute) || "all";
+        buttons.forEach((other) =>
+          other.setAttribute("aria-pressed", String(other === button)),
+        );
+        update();
+      });
+    });
+    update();
+  };
+
+  setupCardFilter({
+    searchSelector: "#portfolio-search",
+    itemSelector: ".portfolio-card[data-category]",
+    buttonSelector: "[data-project-filter]",
+    filterAttribute: "data-project-filter",
+    statusSelector: "#portfolio-status",
+    itemName: "project",
+  });
+  setupCardFilter({
+    searchSelector: "#blog-search",
+    itemSelector: ".blog-card[data-category]",
+    buttonSelector: "[data-blog-filter]",
+    filterAttribute: "data-blog-filter",
+    emptySelector: "#blog-empty",
+    itemName: "article",
+  });
 })();

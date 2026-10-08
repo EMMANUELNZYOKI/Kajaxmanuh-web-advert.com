@@ -38,9 +38,10 @@
       }
     </script>
     <link rel="stylesheet" href="/assets/css/kajax-redesign.css" />
+    <link rel="stylesheet" href="/assets/css/kajax-reference.css" />
     <title>Blog &amp; Insights | KajaxCodeLab</title>
   </head>
-  <body>
+  <body class="page-blog">
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header" id="top">
       <div class="container header-inner">
@@ -132,49 +133,136 @@
               digital-solution focus.
             </p>
           </div>
-          <div class="blog-index-grid">
-            <a class="blog-card" href="#website-planning"
-              ><span class="blog-category">Website planning</span
-              ><span class="blog-card-number">01</span>
-              <h3>
-                What should a business website do before it tries to look
-                impressive?
-              </h3>
-              <p>
-                Start with the visitor’s task, make the next step obvious, and
-                let the design support the purpose.
-              </p>
-              <span class="text-link"
-                >Read the guide <span aria-hidden="true">↓</span></span
-              ></a
-            >
-            <a class="blog-card" href="#custom-system"
-              ><span class="blog-category">Business software</span
-              ><span class="blog-card-number">02</span>
-              <h3>
-                When does a spreadsheet stop being the right business tool?
-              </h3>
-              <p>
-                Some signals that repeated work, handoffs or data gaps may
-                deserve a more connected workflow.
-              </p>
-              <span class="text-link"
-                >Read the guide <span aria-hidden="true">↓</span></span
-              ></a
-            >
-            <a class="blog-card" href="#online-store"
-              ><span class="blog-category">E-commerce</span
-              ><span class="blog-card-number">03</span>
-              <h3>A practical checklist before opening an online store</h3>
-              <p>
-                Give customers the information, confidence and clear ordering
-                path they need.
-              </p>
-              <span class="text-link"
-                >Read the guide <span aria-hidden="true">↓</span></span
-              ></a
-            >
+          <div class="blog-listing-layout">
+            <aside class="blog-sidebar" aria-label="Search and filter articles">
+              <div class="blog-filter-box">
+                <h2>Search the journal</h2>
+                <label class="search-box">
+                  <span class="sr-only">Search articles</span>
+                  <input
+                    id="blog-search"
+                    type="search"
+                    placeholder="Search posts"
+                  />
+                </label>
+              </div>
+              <div class="blog-filter-box">
+                <h2>Filter by topic</h2>
+                <div
+                  class="blog-filter-list"
+                  role="group"
+                  aria-label="Filter articles by topic"
+                >
+                  <button
+                    type="button"
+                    data-blog-filter="all"
+                    aria-pressed="true"
+                  >
+                    All posts
+                  </button>
+                  <button
+                    type="button"
+                    data-blog-filter="website"
+                    aria-pressed="false"
+                  >
+                    Website planning
+                  </button>
+                  <button
+                    type="button"
+                    data-blog-filter="software"
+                    aria-pressed="false"
+                  >
+                    Business software
+                  </button>
+                  <button
+                    type="button"
+                    data-blog-filter="ecommerce"
+                    aria-pressed="false"
+                  >
+                    E-commerce
+                  </button>
+                </div>
+              </div>
+            </aside>
+            <div class="blog-index-grid">
+              <a
+                class="blog-card"
+                href="#website-planning"
+                data-category="website"
+                ><img
+                  class="blog-card-media"
+                  src="/assets/images/kajax-hero-workspace.webp"
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                /><span class="blog-category">Website planning</span
+                ><span class="blog-card-number">01</span>
+                <h3>
+                  What should a business website do before it tries to look
+                  impressive?
+                </h3>
+                <p>
+                  Start with the visitor’s task, make the next step obvious, and
+                  let the design support the purpose.
+                </p>
+                <span class="text-link"
+                  >Read the guide <span aria-hidden="true">↓</span></span
+                ></a
+              >
+              <a
+                class="blog-card"
+                href="#custom-system"
+                data-category="software"
+                ><img
+                  class="blog-card-media"
+                  src="/assets/images/kajax-home-hero.webp"
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                /><span class="blog-category">Business software</span
+                ><span class="blog-card-number">02</span>
+                <h3>
+                  When does a spreadsheet stop being the right business tool?
+                </h3>
+                <p>
+                  Some signals that repeated work, handoffs or data gaps may
+                  deserve a more connected workflow.
+                </p>
+                <span class="text-link"
+                  >Read the guide <span aria-hidden="true">↓</span></span
+                ></a
+              >
+              <a
+                class="blog-card"
+                href="#online-store"
+                data-category="ecommerce"
+                ><img
+                  class="blog-card-media"
+                  src="/assets/images/nia-creation-preview.webp"
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                /><span class="blog-category">E-commerce</span
+                ><span class="blog-card-number">03</span>
+                <h3>A practical checklist before opening an online store</h3>
+                <p>
+                  Give customers the information, confidence and clear ordering
+                  path they need.
+                </p>
+                <span class="text-link"
+                  >Read the guide <span aria-hidden="true">↓</span></span
+                ></a
+              >
+            </div>
           </div>
+          <p
+            class="filter-empty"
+            id="blog-empty"
+            role="status"
+            aria-live="polite"
+          >
+            No articles match your search. Try a different topic or phrase.
+          </p>
           <div class="blog-articles">
             <article class="blog-article" id="website-planning">
               <div class="blog-article-kicker">

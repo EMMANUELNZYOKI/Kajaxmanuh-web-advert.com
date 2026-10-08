@@ -41,9 +41,10 @@
       }
     </script>
     <link rel="stylesheet" href="/assets/css/kajax-redesign.css" />
+    <link rel="stylesheet" href="/assets/css/kajax-reference.css" />
     <title>Portfolio | KajaxCodeLab</title>
   </head>
-  <body>
+  <body class="page-portfolio">
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header" id="top">
       <div class="container header-inner">
@@ -141,8 +142,54 @@
               recreation.
             </p>
           </div>
+          <div class="portfolio-tools">
+            <label class="search-box">
+              <span class="sr-only">Search selected projects</span>
+              <input
+                id="portfolio-search"
+                type="search"
+                placeholder="Search projects by name or area"
+              />
+            </label>
+            <div class="filter-chips" role="group" aria-label="Filter projects">
+              <button
+                type="button"
+                data-project-filter="all"
+                aria-pressed="true"
+              >
+                All work
+              </button>
+              <button
+                type="button"
+                data-project-filter="website"
+                aria-pressed="false"
+              >
+                Websites
+              </button>
+              <button
+                type="button"
+                data-project-filter="ecommerce"
+                aria-pressed="false"
+              >
+                Commerce
+              </button>
+              <button
+                type="button"
+                data-project-filter="sports"
+                aria-pressed="false"
+              >
+                Sports &amp; recreation
+              </button>
+            </div>
+          </div>
+          <p
+            class="filter-status"
+            id="portfolio-status"
+            role="status"
+            aria-live="polite"
+          ></p>
           <div class="portfolio-grid">
-            <article class="portfolio-card">
+            <article class="portfolio-card" data-category="website hospitality">
               <a
                 class="portfolio-image"
                 href="https://greenspotgardens.com/"
@@ -180,7 +227,7 @@
                 >
               </div>
             </article>
-            <article class="portfolio-card">
+            <article class="portfolio-card" data-category="website ecommerce">
               <a
                 class="portfolio-image"
                 href="https://niacreation.com/"
@@ -218,7 +265,7 @@
                 >
               </div>
             </article>
-            <article class="portfolio-card">
+            <article class="portfolio-card" data-category="sports">
               <a
                 class="portfolio-image"
                 href="https://www.youtube.com/@Diossocceracademy"
@@ -256,7 +303,7 @@
                 >
               </div>
             </article>
-            <article class="portfolio-card">
+            <article class="portfolio-card" data-category="sports">
               <a
                 class="portfolio-image"
                 href="https://www.youtube.com/channel/UCTPpKwlPkRlZGX9Lgn2oUkA/videos"
