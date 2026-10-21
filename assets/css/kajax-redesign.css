@@ -3082,3 +3082,19 @@ html[data-theme="dark"] .skip-link {
     background: transparent;
   }
 }
+
+/* Supplied KajaxCodeLab wordmark */
+.brand-logo {
+  display: block;
+  width: 232px;
+  height: auto;
+  max-height: 62px;
+  object-fit: contain;
+}
+.brand-footer .brand-logo {
+  width: 220px;
+}
+@media (max-width: 600px) {
+  .brand-logo { width: 190px; max-height: 54px; }
+  .brand-footer .brand-logo { width: 200px; }
+}
