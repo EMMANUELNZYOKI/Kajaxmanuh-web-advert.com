@@ -82,6 +82,32 @@
     });
   }
 
+  const whatsappLink = document.createElement("a");
+  const whatsappMessage =
+    "Hi KajaxCodeLab, I have a question about your services.";
+  whatsappLink.className = "whatsapp-float";
+  whatsappLink.href = `https://wa.me/254719479011?text=${encodeURIComponent(whatsappMessage)}`;
+  whatsappLink.target = "_blank";
+  whatsappLink.rel = "noopener noreferrer";
+  whatsappLink.setAttribute(
+    "aria-label",
+    "Have a question? Chat with KajaxCodeLab on WhatsApp",
+  );
+  whatsappLink.innerHTML = `
+    <span class="whatsapp-float-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" focusable="false">
+        <path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.4L4 20l.8-3.8a8.5 8.5 0 1 1 15.7-4.4Z" />
+        <path d="M8.7 8.4c.2-.5.4-.6.7-.6h.5c.2 0 .4.1.5.4l.8 1.8c.1.3.1.5-.1.7l-.6.6c-.2.2-.2.4-.1.6.5 1 1.4 1.8 2.3 2.3.2.1.4.1.6-.1l.6-.6c.2-.2.4-.2.7-.1l1.8.8c.3.1.4.3.4.5v.5c0 .3-.1.6-.6.8-.7.4-1.7.3-2.9-.2-1.3-.6-2.6-1.5-3.6-2.5-1-1.1-1.9-2.3-2.4-3.5-.4-1.2-.5-2.2-.1-2.9Z" />
+      </svg>
+    </span>
+    <span class="whatsapp-float-copy">
+      <span class="whatsapp-float-prompt">Have a question?</span>
+      <span class="whatsapp-float-label">Let’s chat on WhatsApp</span>
+    </span>
+    <span class="whatsapp-float-arrow" aria-hidden="true">↗</span>
+  `;
+  document.body.append(whatsappLink);
+
   const revealItems = document.querySelectorAll(".reveal");
   if (
     "IntersectionObserver" in window &&
